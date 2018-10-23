@@ -10,7 +10,7 @@ class Navigation extends React.Component {
   state = {
     current: "watchlist",
     theme: localStorage.getItem("theme") || "light",
-    language: "de",
+    language: "en",
     userSettingsOpen: false
   };
 
