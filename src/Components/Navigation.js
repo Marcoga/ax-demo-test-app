@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import { Menu, Icon, Avatar, Drawer, Switch } from "antd";
+import TranslatedText from "./TranslatedText";
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
@@ -9,6 +10,7 @@ class Navigation extends React.Component {
   state = {
     current: "watchlist",
     theme: localStorage.getItem("theme") || "light",
+    language: "de",
     userSettingsOpen: false
   };
 
@@ -51,7 +53,8 @@ class Navigation extends React.Component {
           mode="horizontal"
         >
           <Menu.Item key="watchlist">
-            <Icon type="stock" theme="outlined" />Watchlist
+            <Icon type="stock" theme="outlined" />
+            <TranslatedText lang={this.state.language} textKex="watchlist" />
           </Menu.Item>
           <Menu.Item key="fxrates">
             <Icon type="dollar" theme="outlined" />Fx Rates
