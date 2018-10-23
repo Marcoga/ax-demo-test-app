@@ -17,7 +17,6 @@ class Navigation extends React.Component {
       this.setState({ userSettingsOpen: true });
       return;
     }
-
     this.setState(
       {
         current: e.key
