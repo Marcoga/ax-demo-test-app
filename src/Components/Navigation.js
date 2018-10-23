@@ -5,6 +5,7 @@ import TranslatedText from "./TranslatedText";
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
+const Option = Select.Option;
 
 class Navigation extends React.Component {
   state = {
