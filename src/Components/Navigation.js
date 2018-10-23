@@ -11,10 +11,6 @@ class Navigation extends React.Component {
   state = {
     current: "watchlist",
     theme: localStorage.getItem("theme") || "light",
-    language:
-      document.cookie && document.cookie.includes("lang=")
-        ? document.cookie.replace("lang=", "")
-        : "de",
     userSettingsOpen: false
   };
 
@@ -58,16 +54,19 @@ class Navigation extends React.Component {
         >
           <Menu.Item key="watchlist">
             <Icon type="stock" theme="outlined" />
-            <TranslatedText lang={this.state.language} textKex="watchlist" />
+            <TranslatedText lang={this.props.language} textKey="watchlist" />
           </Menu.Item>
           <Menu.Item key="fxrates">
-            <Icon type="dollar" theme="outlined" />Fx Rates
+            <Icon type="dollar" theme="outlined" />
+            <TranslatedText lang={this.props.language} textKey="fxrates" />
           </Menu.Item>
           <Menu.Item key="positions" disabled>
-            <Icon type="table" theme="outlined" />Positions
+            <Icon type="table" theme="outlined" />
+            <TranslatedText lang={this.props.language} textKey="positions" />
           </Menu.Item>
           <Menu.Item key="transactions" disabled>
-            <Icon type="wallet" theme="outlined" />Transactions
+            <Icon type="wallet" theme="outlined" />
+            <TranslatedText lang={this.props.language} textKey="transactions" />
           </Menu.Item>
           <Menu.Item key="user" style={{ float: "right" }}>
             {this.props.username}
@@ -108,13 +107,9 @@ class Navigation extends React.Component {
             <label for="lang-selector">Language:</label>
             <Select
               id="lang-selector"
-              defaultValue={this.state.language}
+              defaultValue={this.props.language}
               style={{ marginLeft: 15, width: 100 }}
-              onChange={value => {
-                this.setState({
-                  language: value
-                });
-              }}
+              onChange={this.props.onLangChange}
             >
               <Option value="en">English</Option>
               <Option value="de">Deutsch</Option>

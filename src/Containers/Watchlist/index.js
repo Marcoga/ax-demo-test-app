@@ -11,6 +11,7 @@ export default class WatchlistContainer extends React.Component {
   render() {
     return (
       <Watchlist
+        language={this.props.language}
         onRemoveTicker={ticker => {
           this.setState({
             removedItems: [...this.state.removedItems, ticker]

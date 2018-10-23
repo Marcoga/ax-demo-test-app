@@ -11,6 +11,7 @@ import {
   Icon
 } from "antd";
 import Trend from "react-trend";
+import TranslatedText from "./TranslatedText";
 
 const getColorClass = value => {
   if (value === 0) return "";
@@ -48,7 +49,9 @@ export default class Watchlist extends React.Component {
     return (
       <div className="app-content watchlist">
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <h2>Watchlist</h2>
+          <h2>
+            <TranslatedText lang={this.props.language} textKey="watchlist" />
+          </h2>
           <AutoComplete
             className="certain-category-search"
             dropdownClassName="certain-category-search-dropdown"
@@ -121,7 +124,9 @@ export default class Watchlist extends React.Component {
               sortOrder: sortedInfo.columnKey === "ticker2" && sortedInfo.order
             },
             {
-              title: "% Change",
+              title: (
+                <TranslatedText lang={this.props.language} textKey="change" />
+              ),
               dataIndex: "pct_change",
               key: "pct_change",
               render: text => (
@@ -132,7 +137,12 @@ export default class Watchlist extends React.Component {
                 sortedInfo.columnKey === "pct_change" && sortedInfo.order
             },
             {
-              title: "Net Change",
+              title: (
+                <TranslatedText
+                  lang={this.props.language}
+                  textKey="net_change"
+                />
+              ),
               dataIndex: "net_change",
               key: "net_change",
               render: (text, record) => (
@@ -157,23 +167,34 @@ export default class Watchlist extends React.Component {
               )
             },
             {
-              title: "High",
+              title: (
+                <TranslatedText lang={this.props.language} textKey="high" />
+              ),
               dataIndex: "high",
               key: "high"
             },
             {
-              title: "Low",
+              title: (
+                <TranslatedText lang={this.props.language} textKey="low" />
+              ),
               dataIndex: "low",
               key: "low"
             },
             {
-              title: "Last Price",
+              title: (
+                <TranslatedText
+                  lang={this.props.language}
+                  textKey="last_price"
+                />
+              ),
               dataIndex: "latest_price",
               key: "latest_price"
             },
 
             {
-              title: "Remove",
+              title: (
+                <TranslatedText lang={this.props.language} textKey="remove" />
+              ),
               dataIndex: "ticker",
               render: ticker => (
                 <Popconfirm
