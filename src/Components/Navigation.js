@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import { Menu, Icon, Avatar, Drawer, Switch } from "antd";
+import { Menu, Icon, Avatar, Drawer, Switch, Select, Divider } from "antd";
 import TranslatedText from "./TranslatedText";
 
 const SubMenu = Menu.SubMenu;
@@ -92,7 +92,7 @@ class Navigation extends React.Component {
             <Switch
               checkedChildren="Light"
               unCheckedChildren="Dark"
-              style={{ marginLeft: 7 }}
+              style={{ marginLeft: 30 }}
               checked={this.state.theme === "light"}
               onChange={useLight => {
                 const newTheme = useLight ? "light" : "dark";
@@ -102,6 +102,24 @@ class Navigation extends React.Component {
               }}
             />
           </div>
+          <Divider />
+          <div>
+            <label for="lang-selector">Language:</label>
+            <Select
+              id="lang-selector"
+              defaultValue={this.state.language}
+              style={{ marginLeft: 15, width: 100 }}
+              onChange={value => {
+                this.setState({
+                  language: value
+                });
+              }}
+            >
+              <Option value="en">English</Option>
+              <Option value="de">Deutsch</Option>
+            </Select>
+          </div>
+          <Divider />
         </Drawer>
       </>
     );
