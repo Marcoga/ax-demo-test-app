@@ -66,9 +66,6 @@ export default class Watchlist extends React.Component {
         </div>
         <Divider />
         <Table
-          scroll={{
-            y: window.innerHeight - 275
-          }}
           onChange={this.handleChange}
           columns={[
             {
