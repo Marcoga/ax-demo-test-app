@@ -1,0 +1,46 @@
+{
+  "watchlist": {
+    "en": "Watchlist",
+    "de": "Beobachtungsliste"
+  },
+  "fxrates": {
+    "en": "Fx Rates",
+    "de": "Wechselkurse"
+  },
+  "positions": {
+   "en": "Positions",
+    "de": "Positionen"
+  },
+  "transactions": {
+    "en": "Transactions",
+    "de": "Transaktionen"
+  },
+  "theme": {
+    "en": "Theme",
+    "de": "Motiv"
+  },
+  "change": {
+    "en": "% Change",
+    "de": "% Veränderung"
+  },
+  "net_change": {
+    "en": "Net Change",
+    "de": "Nettoveränderung"
+  },
+  "high": {
+    "en": "High",
+    "de": "Hoch"
+  },
+  "low": {
+    "en": "Low",
+    "de": "Tief"
+  },
+  "last_price": {
+    "en": "Last Price",
+    "de": "Letzter Kurs"
+  },
+  "remove": {
+    "en": "Remove",
+    "de": "Entfernen"
+  }
+}
