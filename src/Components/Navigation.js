@@ -88,7 +88,7 @@ class Navigation extends React.Component {
           visible={this.state.userSettingsOpen}
         >
           <div>
-            Theme:
+            <TranslatedText lang={this.props.language} textKey="theme" />
             <Switch
               checkedChildren="Light"
               unCheckedChildren="Dark"
@@ -104,7 +104,9 @@ class Navigation extends React.Component {
           </div>
           <Divider />
           <div>
-            <label for="lang-selector">Language:</label>
+            <label for="lang-selector">
+              <TranslatedText lang={this.props.language} textKey="language" />
+            </label>
             <Select
               id="lang-selector"
               defaultValue={this.props.language}

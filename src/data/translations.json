@@ -42,5 +42,9 @@
   "remove": {
     "en": "Remove",
     "de": "Entfernen"
+  },
+  "language": {
+    "en": "Language",
+    "de": "Sprache"
   }
 }
