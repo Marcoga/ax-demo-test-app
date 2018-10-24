@@ -13,7 +13,7 @@ class App extends React.Component {
     language:
       document.cookie && document.cookie.includes("lang=")
         ? document.cookie.replace("lang=", "")
-        : "de"
+        : "en"
   };
   render() {
     return (
