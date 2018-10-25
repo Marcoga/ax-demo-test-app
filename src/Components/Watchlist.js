@@ -128,9 +128,12 @@ export default class Watchlist extends React.Component {
                 <TranslatedText lang={this.props.language} textKey="change" />
               ),
               dataIndex: "pct_change",
+              align: "right",
               key: "pct_change",
               render: text => (
-                <span className={getColorClass(text)}>{`${text}%`}</span>
+                <span className={getColorClass(text)}>{`${parseFloat(
+                  text
+                ).toFixed(2)}%`}</span>
               ),
               sorter: (a, b) => a.pct_change - b.pct_change,
               sortOrder:
@@ -144,6 +147,7 @@ export default class Watchlist extends React.Component {
                 />
               ),
               dataIndex: "net_change",
+              align: "right",
               key: "net_change",
               render: (text, record) => (
                 <Popover
@@ -162,7 +166,9 @@ export default class Watchlist extends React.Component {
                     />
                   }
                 >
-                  <span className={getColorClass(text)}>{`${text}`}</span>
+                  <span className={getColorClass(text)}>{`${parseFloat(
+                    text
+                  ).toFixed(2)}`}</span>
                 </Popover>
               )
             },
@@ -170,15 +176,19 @@ export default class Watchlist extends React.Component {
               title: (
                 <TranslatedText lang={this.props.language} textKey="high" />
               ),
+              align: "right",
               dataIndex: "high",
-              key: "high"
+              key: "high",
+              render: text => <span>{`${parseFloat(text).toFixed(2)}`}</span>
             },
             {
               title: (
                 <TranslatedText lang={this.props.language} textKey="low" />
               ),
+              align: "right",
               dataIndex: "low",
-              key: "low"
+              key: "low",
+              render: text => <span>{`${parseFloat(text).toFixed(2)}`}</span>
             },
             {
               title: (
@@ -188,7 +198,9 @@ export default class Watchlist extends React.Component {
                 />
               ),
               dataIndex: "latest_price",
-              key: "latest_price"
+              align: "right",
+              key: "latest_price",
+              render: text => <span>{`${parseFloat(text).toFixed(2)}`}</span>
             },
 
             {
@@ -196,6 +208,7 @@ export default class Watchlist extends React.Component {
                 <TranslatedText lang={this.props.language} textKey="remove" />
               ),
               dataIndex: "ticker",
+              align: "center",
               render: ticker => (
                 <Popconfirm
                   title={`Are you sure you want to remove ${ticker} from the watchlist?`}

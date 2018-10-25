@@ -56,7 +56,7 @@ class Navigation extends React.Component {
             <Icon type="stock" theme="outlined" />
             <TranslatedText lang={this.props.language} textKey="watchlist" />
           </Menu.Item>
-          <Menu.Item key="fxrates">
+          <Menu.Item key="fxrates" disabled>
             <Icon type="dollar" theme="outlined" />
             <TranslatedText lang={this.props.language} textKey="fxrates" />
           </Menu.Item>

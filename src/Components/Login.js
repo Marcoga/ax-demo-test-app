@@ -1,5 +1,14 @@
 import React from "react";
-import { Form, Icon, Input, Button, Checkbox, Card, Popover } from "antd";
+import {
+  Form,
+  Icon,
+  Input,
+  Button,
+  Checkbox,
+  Card,
+  Popover,
+  Alert
+} from "antd";
 import "./Login.css";
 
 const FormItem = Form.Item;
@@ -27,7 +36,25 @@ class NormalLoginForm extends React.Component {
   };
 
   render() {
-    if (this.state.loggedIn) return this.props.children(this.state.user);
+    if (this.state.loggedIn) {
+      return (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh"
+          }}
+        >
+          <Alert
+            message={`Welcome ${this.state.user}`}
+            description="You have successfully logged in."
+            type="success"
+            showIcon
+          />
+        </div>
+      );
+    }
     const { getFieldDecorator } = this.props.form;
     let userErrors = {};
     if (this.state.userError) {

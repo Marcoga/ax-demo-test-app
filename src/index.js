@@ -19,34 +19,31 @@ class App extends React.Component {
     return (
       <div className="App">
         <Router>
-          <Login>
-            {username => (
-              <>
-                <Navigation
-                  language={this.state.language}
-                  username={username}
-                  onLangChange={newLanguage => {
-                    this.setState({
-                      language: newLanguage
-                    });
-                  }}
-                />
+          <>
+            <Navigation
+              language={this.state.language}
+              username={"Guest"}
+              onLangChange={newLanguage => {
+                this.setState({
+                  language: newLanguage
+                });
+              }}
+            />
 
-                <Switch>
-                  <Route path="/fxrates" component={FxRatesContainer} />
-                  <Route
-                    path="/"
-                    render={(...routeProps) => (
-                      <WatchlistContainer
-                        {...routeProps}
-                        language={this.state.language}
-                      />
-                    )}
+            <Switch>
+              <Route path="/login" component={Login} />
+              <Route path="/fxrates" component={FxRatesContainer} />
+              <Route
+                path="/"
+                render={(...routeProps) => (
+                  <WatchlistContainer
+                    {...routeProps}
+                    language={this.state.language}
                   />
-                </Switch>
-              </>
-            )}
-          </Login>
+                )}
+              />
+            </Switch>
+          </>
         </Router>
       </div>
     );
