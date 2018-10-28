@@ -1,3 +1,6 @@
+* {
+  caret-color: transparent !important;
+}
 .watchlist .positive {
   color: #16c70d;
 }
