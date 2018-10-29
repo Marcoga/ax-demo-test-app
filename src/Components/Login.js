@@ -112,6 +112,7 @@ class NormalLoginForm extends React.Component {
               </a>
               <Button
                 type="primary"
+                id="submit"
                 htmlType="submit"
                 className="login-form-button"
               >

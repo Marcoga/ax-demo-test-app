@@ -166,9 +166,9 @@ export default class Watchlist extends React.Component {
                     />
                   }
                 >
-                  <span className={getColorClass(text)}>{`${parseFloat(
-                    text
-                  ).toFixed(2)}`}</span>
+                  <span
+                    className={`detail-chart ${getColorClass(text)}`}
+                  >{`${parseFloat(text).toFixed(2)}`}</span>
                 </Popover>
               )
             },

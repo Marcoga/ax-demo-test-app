@@ -14,11 +14,38 @@ export default class FxRates extends React.Component {
               title: "Currency",
               key: "currency",
               render: (_, r) => (
-                <div>{`${r.symbol.substr(0, 3)} - ${r.symbol.substr(3)}`}</div>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <div>
+                    <img
+                      width="35"
+                      src={`https://www.xe.com/themes/xe/images/flags/svg/${r.symbol
+                        .substr(3)
+                        .toLowerCase()}.svg`}
+                    />
+                  </div>
+                  <div style={{ marginLeft: 7 }}>{`${r.symbol.substr(3)}`}</div>
+                </div>
               )
             },
             {
-              title: "Rate",
+              title: (
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "flex-end"
+                  }}
+                >
+                  <div>
+                    <img
+                      width="35"
+                      src="https://www.xe.com/themes/xe/images/flags/svg/eur.svg"
+                    />
+                  </div>
+                  <div style={{ marginLeft: 7 }}>1 EUR</div>
+                </div>
+              ),
+              align: "right",
               dataIndex: "bid",
               key: "bid"
             }
