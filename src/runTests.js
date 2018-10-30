@@ -18,7 +18,7 @@ fetch(url, {
     // "Content-Type": "application/x-www-form-urlencoded",
   },
   body: JSON.stringify({
-    triggeredBy: process.env.TRIGGERED_BY,
+    triggeredBy: process.env.CIRCLE_SHA1,
     clientVersion: process.env.CLIENT_VERSION
   }) // body data type must match "Content-Type" header
 }).then(response => console.log(response));
