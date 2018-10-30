@@ -17,7 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "node runTests.js",
+    "test": "node src/runTests.js",
     "eject": "react-scripts eject"
   },
   "browserslist": [
