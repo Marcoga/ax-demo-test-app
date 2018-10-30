@@ -6,7 +6,14 @@ fetch(url, {
   method: "POST", // *GET, POST, PUT, DELETE, etc.
   mode: "cors", // no-cors, cors, *same-origin
   headers: {
-    "a-token": process.env.AX_CI_AUTH_TOKEN
+    "a-token": process.env.AX_CI_AUTH_TOKEN,
+    Authorization:
+      "Basic " +
+      Buffer.from(
+        process.env.AXCEPT_HTTP_AUTH_USERNAME +
+          ":" +
+          process.env.AXCEPT_HTTP_AUTH_PASSWORD
+      ).toString("base64")
     // "Content-Type": "application/x-www-form-urlencoded",
   },
   body: JSON.stringify({
