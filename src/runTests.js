@@ -1,3 +1,4 @@
+const fetch = require("node-fetch");
 const url = `${process.env.AXCEPT_SERVICE_URL}/test-mgmt/test-run/${
   process.env.AXCEPT_ENV_ID
 }`;
