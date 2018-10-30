@@ -1,4 +1,7 @@
 const fetch = require("node-fetch");
+console.log(
+  process.env.CIRCLE_REPOSITORY_URL + " / " + process.env.CIRCLE_SHA1
+);
 const url = `${process.env.AXCEPT_SERVICE_URL}/test-mgmt/test-run/${
   process.env.AXCEPT_ENV_ID
 }`;
