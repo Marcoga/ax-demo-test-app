@@ -6,6 +6,7 @@ fetch(url, {
   method: "POST", // *GET, POST, PUT, DELETE, etc.
   mode: "cors", // no-cors, cors, *same-origin
   headers: {
+    "Content-Type": "application/json",
     "a-token": process.env.AX_CI_AUTH_TOKEN,
     Authorization:
       "Basic " +
