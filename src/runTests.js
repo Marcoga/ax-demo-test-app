@@ -22,6 +22,7 @@ fetch(url, {
   },
   body: JSON.stringify({
     triggeredBy: process.env.TRIGGERED_BY,
-    clientVersion: process.env.CIRCLE_BUILD_NUM
+    clientVersion:
+      process.env.CIRCLE_BRANCH + ":" + process.env.CIRCLE_BUILD_NUM
   }) // body data type must match "Content-Type" header
 }).then(response => console.log(response));
