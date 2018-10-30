@@ -13,4 +13,4 @@ fetch(url, {
     triggeredBy: process.env.TRIGGERED_BY,
     clientVersion: process.env.CLIENT_VERSION
   }) // body data type must match "Content-Type" header
-}).then(response => response.json());
+}).then(response => console.log(response));
